@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'custom-styling/custom-classes' as *;
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+app-landing-page,
+app-input,
+app-output {
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+
+::-webkit-scrollbar {
+	height: 9px;
+	width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #d3d3d3;
+	width: 9px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+	width: 9px;
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+.movie-details-content-container div::-webkit-scrollbar-thumb {
+	background: #9b9b9b;
+	width: 3px;
+}
