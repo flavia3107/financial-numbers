@@ -1,0 +1,38 @@
+<div class="container flex-column center">
+	<h1>Enter Financial Numbers</h1>
+	<form [formGroup]="inputForm" (ngSubmit)="onSubmit()" class="flex-column space_between">
+		<div formArrayName="financialInputs" class="input-items">
+			@for(inputCtrl of financialInputs.controls; track inputCtrl; let i = $index){
+			<div class="input-items" [formGroupName]="i" class="flex-row center">
+				<label class="flex-row center" [for]="'financialInput' + i">
+					No {{ i + 1 }}:
+				</label>
+				<input class="financialInput" [id]="'financialInput' + i" formControlName="value" type="text"
+					placeholder="e.g. 250k, 10m, .5b" />
+				<span
+					title="Enter shorthand numbers like 250k, 10m, or .5b, separated by commas or spaces.">&#9432;</span>
+				@if(financialInputs.length > 1){
+				<button type="button" class="delete" (click)="removeInput(i)" title="Remove this input">
+					&times;
+				</button>
+				}
+			</div>
+			}
+		</div>
+		<div>
+			@if(inputForm.invalid && inputForm.touched){
+			<p class="hint">Please enter at least one valid shorthand number. </p>
+			}
+			<div class="flex-row right">
+				<button type="button" class="navigation-button secondary-button" (click)="addInput()">+ New
+					Number</button>
+				<button type="submit" class="navigation-button" [disabled]="inputForm.invalid" style="margin: 0.5rem 0">
+					Submit & Go to Output
+				</button>
+			</div>
+		</div>
+	</form>
+	<div class="flex-row right" style="margin-right: 2.5rem;">
+		<button style="margin-top: 0" routerLink="/" class="navigation-button secondary-button">Main Page </button>
+	</div>
+</div>
