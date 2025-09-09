@@ -21,12 +21,10 @@ This project will be implementing this functionality.
 
 This project should be time boxed to 4 hours.
 
----
 
-## 🚀 Live Demo
+## Live Demo
 
 [Demo](https://flavia3107.github.io/financial-numbers/)
 
----
 
 # financial-numbers
