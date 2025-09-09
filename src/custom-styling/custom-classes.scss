@@ -1,12 +1,14 @@
 .container {
-	width: 33.5rem;
-	margin: 5rem auto;
+	width: 37.5rem;
+	margin: 2rem auto;
 	padding: 2rem;
 	text-align: center;
 	font-family: Arial, sans-serif;
 	color: #2f2f2f;
 	box-shadow: 0px 0px 20px -6px #cfc9c9;
+	box-sizing: border-box;
 	background-color: #e5e5e5;
+	height: 45.75rem;
 }
 
 .navigation-button {
