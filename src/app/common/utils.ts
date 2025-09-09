@@ -10,7 +10,7 @@ export function isValidNumberWithSuffix(value: string): boolean {
   value = value.toLowerCase().trim();
   const cleanValue = value.replace(/,/g, '');
   const suffixKeys = Object.keys(suffixMultipliers).join('|');
-  const regex = new RegExp(`^(\\d+(?:\\.\\d+)?)(?:(${suffixKeys}))?$`, 'i');
+  const regex = new RegExp(`^(\\d*\\.?\\d+)(?:(${suffixKeys}))?$`, 'i');
   const match = cleanValue.match(regex);
 
   if (!match || !match[1]) return false;
@@ -29,7 +29,7 @@ export function convertShorthandToNumber(value: string): number | null {
   value = value.toLowerCase().trim();
   const cleanValue = value.replace(/,/g, '');
   const suffixKeys = Object.keys(suffixMultipliers).join('|');
-  const regex = new RegExp(`^(\\d+(?:\\.\\d+)?)(?:(${suffixKeys}))?$`, 'i');
+  const regex = new RegExp(`^(\\d*\\.?\\d+)(?:(${suffixKeys}))?$`, 'i');
 
   const match = cleanValue.match(regex);
   if (!match) {
